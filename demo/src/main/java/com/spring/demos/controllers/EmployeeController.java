@@ -24,6 +24,8 @@ public class EmployeeController {
         logger.info("Inside handler to get Employee");
         logger.info(("Changing code...check github repo"));
         Optional<Employee> employee1=employeeService.getEmployeeById(id);
+       employee1.ifPresent(value->System.out.println("Checking"));
+
 
         return ResponseEntity.ok().body(employee1);
 
